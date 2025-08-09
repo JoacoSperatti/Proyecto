@@ -1,4 +1,3 @@
-/* Reset y base */
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +13,6 @@ html, body {
   flex-direction: column;
 }
 
-/* Wrapper para que main ocupe el espacio */
 .wrapper {
   flex: 1;
   display: flex;
@@ -22,7 +20,6 @@ html, body {
   min-height: 100vh;
 }
 
-/* Nav */
 nav {
   background-color: #ffffff;
   padding: 10px 20px;
@@ -30,13 +27,11 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-
 nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
 }
-
 nav ul li a {
   text-decoration: none;
   color: black;
@@ -44,32 +39,33 @@ nav ul li a {
   padding: 10px 15px;
   transition: color 0.3s ease;
 }
-
 nav ul li a:hover {
   color: #b5838d;
 }
-
-/* Logo más grande */
 nav img.nav-logo {
   height: 120px !important;
   width: auto !important;
   transition: height 0.3s ease;
 }
-
-/* Responsive para logo */
 @media (max-width: 768px) {
   nav img.nav-logo {
     height: 90px !important;
   }
 }
 
-/* Main para ocupar espacio disponible */
 main {
   flex: 1;
   padding: 20px;
 }
+main:not(.no-zoom) figure img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+main:not(.no-zoom) figure img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
 
-/* Footer */
 .footer {
   display: flex;
   justify-content: space-between;
@@ -79,28 +75,33 @@ main {
   flex-wrap: wrap;
   gap: 20px;
 }
-
 .footer-column {
   flex: 1;
   min-width: 200px;
   text-align: center;
 }
-
-.contactanos {
-  text-align: left;
-}
-
-.trabaja {
-  text-align: center;
-  color: #2c589b; /* color azul uniforme */
-}
-
-.social {
+.footer-column.social {
   text-align: right;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 10px;
+}
+.footer-column.social a {
+  text-decoration: none;
+  color: #2c589b;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.footer-column.social a:hover {
+  color: #b5838d;
+}
+.footer .contactanos {
+  text-align: left;
+}
+.footer .trabaja {
+  text-align: center;
+  color: #2c589b;
 }
 
 .input-field {
@@ -113,19 +114,6 @@ main {
   border-radius: 5px;
 }
 
-/* Animación para imágenes */
-
-main:not(.no-zoom) figure img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-main:not(.no-zoom) figure img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-/* Tamaño uniforme para imágenes en galerías y espacios */
 #galeria-intercalada figure img,
 #evaluaciones figure img,
 #nuestros-profesionales figure img,
@@ -137,7 +125,6 @@ main:not(.no-zoom) figure img:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* Títulos principales de cada página */
 .titulo-tratamientos,
 .titulo-evaluaciones,
 .titulo-profesionales,
@@ -148,7 +135,6 @@ main:not(.no-zoom) figure img:hover {
   color: #4b2e2e;
 }
 
-/* Layout y estilos para evaluaciones */
 #evaluaciones {
   display: flex;
   flex-wrap: wrap;
@@ -156,20 +142,17 @@ main:not(.no-zoom) figure img:hover {
   justify-content: center;
   padding: 40px 20px;
 }
-
 #evaluaciones figure {
   flex: 0 0 280px;
   text-align: center;
   margin: 0;
 }
-
 #evaluaciones figure figcaption {
   font-size: 1.1rem;
   font-weight: 500;
   color: #333;
 }
 
-/* Layout para nuestro espacio */
 #nuestro-espacio {
   display: flex;
   justify-content: center;
@@ -179,46 +162,39 @@ main:not(.no-zoom) figure img:hover {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 #nuestro-espacio .espacio-item {
   flex: 1 1 45%;
   box-sizing: border-box;
   text-align: center;
   min-width: 300px;
 }
-
 #nuestro-espacio .espacio-item h2 {
   font-size: 1.5rem;
   color: #4b2e2e;
   margin-bottom: 10px;
 }
-
 #nuestro-espacio .espacio-item h3 {
   font-size: 1.1rem;
   color: #555;
   margin-top: 10px;
 }
 
-/* Layout para tratamientos */
 #galeria-intercalada {
   display: flex;
   gap: 70px;
   justify-content: center;
   margin-top: 50px;
 }
-
 #galeria-intercalada > figure {
   flex: 0 0 300px;
   margin: 0;
   overflow: visible;
   text-align: center;
 }
-
 #galeria-intercalada > figure:nth-child(even) {
   margin-top: 200px;
 }
 
-/* Prolijidad para textos y otros elementos */
 .texto {
   margin-left: 900px;
   margin-top: 600px;
@@ -226,47 +202,31 @@ main:not(.no-zoom) figure img:hover {
   font-family: Arial, sans-serif;
   line-height: 1.2;
 }
-
 .texto .linea-texto1,
 .texto .linea-texto2 {
   display: block;
   font-size: 70px;
 }
 
-/* Footer links */
-.footer-column.social a {
-  text-decoration: none;
-  color: #2c589b;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.footer-column.social a:hover {
-  color: #b5838d;
-}
-
-/* Responsive ajustes generales */
 @media (max-width: 768px) {
   #galeria-intercalada {
     flex-direction: column;
     gap: 40px;
   }
-
   #galeria-intercalada > figure:nth-child(even) {
     margin-top: 0;
   }
-
   nav ul {
     gap: 10px;
   }
-
   nav ul li a {
     padding: 8px 10px;
   }
-
   .texto {
     margin-left: 20px;
     margin-top: 50px;
     font-size: 40px;
   }
 }
+
+/*# sourceMappingURL=style.css.map */
